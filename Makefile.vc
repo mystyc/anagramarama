@@ -7,7 +7,7 @@
 # $Id$
 #-------------------------------------------------------------------------
 
-VERSION=0.4
+VERSION=0.5.2
 
 # You should set SDLDIR to the directory containing your SDL include
 # and lib directories.
@@ -87,9 +87,9 @@ OBJS   = \
 	$(TMPDIR)\ag.res
 
 all:    ag
-ag:     setup $(OUTDIR)\ag.exe
+ag:     setup $(OUTDIR)\Anagramarama_Game.exe
 
-$(OUTDIR)\ag.exe: $(OBJS)
+$(OUTDIR)\Anagramarama_Game.exe: $(OBJS)
 	$(LD) $(LDFLAGS) -out:$@ $** $(LIBS)
 
 release: ag Anagramarama.nsi
@@ -103,12 +103,12 @@ release: ag Anagramarama.nsi
 #-------------------------------------------------------------------------
 
 tests: test_agcore test_dlb test_linked
-test_ag: setup $(OUTDIR)\test_ag.exe
+test_ag: setup $(OUTDIR)\test_Anagramarama_Game.exe
 test_dlb: setup $(OUTDIR)\test_dlb.exe
 test_agcore: setup $(OUTDIR)\test_agcore.exe
 test_linked: setup $(OUTDIR)\test_linked.exe
 
-$(OUTDIR)\test_ag.exe: $(SRCDIR)/ag_test.c
+$(OUTDIR)\test_Anagramarama_Game.exe: $(SRCDIR)/ag_test.c
 	$(CC) $(CFLAGS) $(INC) -DUNIT_TEST -Fo$(TSTDIR)\ $** -link $(LDFLAGS) -subsystem:console -out:$@
 
 $(OUTDIR)\test_agcore.exe: $(SRCDIR)/ag_core.c $(TMPDIR)\dlb.obj $(TMPDIR)\linked.obj

@@ -4,7 +4,7 @@ CC=gcc
 
 C_FILES=src/dlb.c src/linked.c src/sprite.c src/ag.c
 OBJ_FILES=src/dlb.o src/linked.o src/sprite.o src/ag.o
-OUT_FILE=ag
+OUT_FILE=Anagramarama_Game.exe
 
 all:ag
 

@@ -29,8 +29,9 @@
 !include "LangFile.nsh"
 
 !define AG_RELEASE_MAJOR 0
-!define AG_RELEASE_MINOR 4
-!define AG_RELEASE_PATCH 0
+!define AG_RELEASE_MINOR 5
+!define AG_RELEASE_PATCH 2
+!define MUI_ICON "src\ag.ico"
 
 Name "Anagramarama"
 OutFile "Anagramarama${AG_RELEASE_MAJOR}${AG_RELEASE_MINOR}.exe"
@@ -115,13 +116,13 @@ LangString DESC_SecLangPtBr ${LANG_FRENCH} "Inclure le soutien de langue Brésili
 Section "Anagramara" SecMain
     SectionIn RO
     SetOutPath "$INSTDIR"
-    File "Release\ag.exe"
-    File "Release\SDL.dll"
-    File "Release\SDL_mixer.dll"
-    File "readme"
+    File "Anagramarama_Game.exe"
+    File "SDL.dll"
+    File "SDL_mixer.dll"
+    File "readme.md"
     File /r "audio"
     SetOutPath "$INSTDIR\i18n"
-    File /r "i18n\en_GB"
+    File /r "i18n\en"
     WriteRegStr HKLM "${UninstallRegistryKey}" "DisplayName" "Anagramarama"
     WriteRegStr HKLM "${UninstallRegistryKey}" "UninstallString" "$INSTDIR\Uninstall.exe"
     WriteRegDWORD HKLM "${UninstallRegistryKey}" "NoModify" 1
@@ -132,7 +133,7 @@ SectionEnd
 Section "Start Menu" SecMenu
     SetOutPath "$INSTDIR"
     CreateDirectory "$SMPROGRAMS\Anagramarama"
-    CreateShortCut "$SMPROGRAMS\Anagramarama\Anagramarama.lnk" "$INSTDIR\ag.exe" "" "$INSTDIR\ag.exe" 0
+    CreateShortCut "$SMPROGRAMS\Anagramarama\Anagramarama.lnk" "$INSTDIR\Anagramarama_Game.exe" "" "$INSTDIR\Anagramarama_Game.exe" 0
     CreateShortCut "$SMPROGRAMS\Anagramarama\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\Uninstall.exe" 0
 SectionEnd
 
