@@ -19,7 +19,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 Contact Details: colm@coralquest.com
 		 12 Weston Terrace, West Kilbride, KA23 9JX.  Scotland.
 */
-
+#include <SDL/SDL.h>
 #define LETTER_FAST 30
 #define LETTER_SLOW 10
 #define GAME_LETTER_HEIGHT 90

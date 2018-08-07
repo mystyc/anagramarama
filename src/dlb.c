@@ -179,7 +179,8 @@ static int test_dlb(void *clientData)
     test_equals_int("check code for bad file", 0,
                     dlb_create(&head, "src/garbage_bad_file"));
     test_equals_int("check code for valid file", 1,
-                    dlb_create(&head, "i18n/en_GB/wordlist.txt"));
+                    // dlb_create(&head, "i18n/en_GB/wordlist.txt"));
+                    dlb_create(&head, "i18n/en/wordlist.txt"));
     test_equals_int("check lookup", 1, dlb_lookup(head, "anagram"));
     test_equals_int("check lookup", 1, dlb_lookup(head, "zygote"));
     dlb_free(head);

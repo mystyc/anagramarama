@@ -64,4 +64,5 @@ typedef struct Box {
 #define SPACE_FILLED_CHARS {SPACE_CHAR, SPACE_CHAR, SPACE_CHAR, SPACE_CHAR,\
                              SPACE_CHAR, SPACE_CHAR, SPACE_CHAR, 0}
 #define AVAILABLE_TIME 300
-#define DEFAULT_LOCALE_PATH "i18n/en_GB/"
+// #define DEFAULT_LOCALE_PATH "i18n/en_GB/"
+#define DEFAULT_LOCALE_PATH "i18n/en/"

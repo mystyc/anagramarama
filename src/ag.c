@@ -198,6 +198,7 @@ static Mix_Chunk*
 getSound(const char *name)
 {
     struct sound* currentSound = soundCache;
+	currentSound = NULL;
 
 	while (currentSound != NULL) {
 
@@ -566,7 +567,8 @@ nextBlankPosition(int box, int* index)
 
 /***********************************************************
 synopsis: handle the keyboard events
-	  BACKSPACE & ESCAPE - clear letters
+	  ESCAPE & DEL - clear letters	  
+	  BACKSPACE - clear only 1 letter (most recent)
 	  RETURN - check guess
 	  SPACE - shuffle
 	  a-z - select the first instance of that letter
@@ -593,6 +595,11 @@ handleKeyboardEvent(SDL_Event *event, struct node* head,
 		switch(keyedLetter){
 
 			case SDLK_ESCAPE:
+				/* clear has been pressed */
+				clearGuess = 1;
+				break;
+
+			case SDLK_DELETE:
 				/* clear has been pressed */
 				clearGuess = 1;
 				break;

@@ -220,7 +220,8 @@ static int test_shiftLeft(void *cd)
 static int test_getRandomWord()
 {
     char buffer[9];
-    strcpy(language, "i18n/en_GB/");
+    // strcpy(language, "i18n/en_GB/");
+    strcpy(language, "i18n/en/");
     getRandomWord(buffer, sizeof(buffer));
     test_equals_int("randword last char is space", ' ', buffer[7]);
     return 0;
@@ -234,7 +235,8 @@ static int test_anagram(void *cd)
     struct dlb_node *tree = NULL;
     struct node *list = NULL;
 
-    strcpy(language, "i18n/en_GB/");
+    // strcpy(language, "i18n/en_GB/");
+    strcpy(language, "i18n/en/");
     for (n = 0; n < 10; ++n) {
         getRandomWord(buffer, sizeof(buffer));
         if (strlen(buffer) == 8) ++count;
