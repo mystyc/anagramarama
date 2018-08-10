@@ -8,5 +8,6 @@ Assuming you have MinGW installed with SDL, and any other necessary dependencies
 	`mingw32-make -f makefile.WIN32.mak` .
 The game can be played with the resulting executable.
 
-###Installer
+### Installer
+
 Additionally, you can also build the installer program if you have the __NullSoft__ __installer__ __compiler__ installed on your system.  This step is not required to actually build and run the game, but it does simplify distributing the game to the end-user.
